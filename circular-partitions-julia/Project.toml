@@ -1,0 +1,12 @@
+name = "CircularPartitions"
+uuid = "b0cd87d6-2e95-4d60-81f2-67d02fb8112f"
+version = "0.1.0"
+
+[compat]
+julia = "1.11"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]

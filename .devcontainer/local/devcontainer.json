@@ -1,0 +1,30 @@
+{
+  "name": "msc-math-thesis (local)",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "workspaceFolder": "/workspaces/msc-math-thesis",
+  "remoteUser": "vscode",
+  "mounts": [
+    "source=pnpm_store_vscode,target=/home/vscode/.pnpm-store,type=volume",
+    "source=npm_cache_vscode,target=/home/vscode/.npm,type=volume",
+    "source=julia_pkg_vscode,target=/home/vscode/.julia,type=volume",
+    "source=gh_auth_vscode,target=/home/vscode/.config/gh,type=volume",
+    "source=codex_auth_vscode,target=/home/vscode/.codex,type=volume",
+    "source=bash_history_vscode,target=/home/vscode/.bash_history_dir,type=volume"
+  ],
+  "postCreateCommand": "/bin/bash .devcontainer/local/post-create.sh",
+  "postStartCommand": "/bin/bash .devcontainer/local/post-start.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "julialang.language-julia",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode.makefile-tools"
+      ]
+    }
+  }
+}

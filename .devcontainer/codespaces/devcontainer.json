@@ -1,0 +1,20 @@
+{
+  "name": "msc-math-thesis (codespaces)",
+  "workspaceFolder": "/workspaces/msc-math-thesis",
+  "postCreateCommand": "/bin/bash .devcontainer/codespaces/post-create.sh",
+  "postStartCommand": "/bin/bash .devcontainer/codespaces/post-start.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "julialang.language-julia",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode.makefile-tools"
+      ]
+    }
+  }
+}

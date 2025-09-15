@@ -1,0 +1,23 @@
+# Node
+node_modules/
+math-agent/frontend/dist/
+.turbo/
+
+# Python
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Julia
+**/Manifest.toml.backup
+**/deps/
+
+# Logs
+logs/
+*.log
+
+# Editor
+.DS_Store
+.idea/
+.vscode/
