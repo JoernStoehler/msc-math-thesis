@@ -94,3 +94,12 @@ Rationales — Why These Choices
 - Storybook included: needed for rapid UI iteration; excluded from default tests because it’s not a test runner.
 - “Never log secrets. Env only.”: simplest effective control; enforced by code style (no `-x`, no `printenv`).
 - Makefile limited to multi-project ops: avoids hiding per-project commands behind wrappers.
+
+## Deep Research Workflow
+
+- Each project maintains a `docs/tasks/` tree to track asynchronous research jobs. A task is identified by matching filenames `task-<num>-<slug>.*` (prompt, report, completion notes, follow-up files, etc.).
+- When the user asks to initiate a deep-research query, create the prompt in the target project at `docs/tasks/task-<num>-<slug>.md` and summarize the required copy/paste round-trips: user pastes the prompt into ChatGPT Deep Research, relays clarifying questions to you, you draft responses for the user to forward, and after ~15 minutes the user returns the generated report.
+- Once the report arrives, save it as `task-<num>-<slug>.report.md`, perform any follow-up documentation or file generation, and capture the outcome in `task-<num>-<slug>.complete.md` (or equivalent) before wrapping up the task.
+- For literature follow-ups, store source files under `PROJECT/docs/literature/<slug>/` where `<slug>` describes authors/year/topic. Place PDFs or other downloaded assets as `main.pdf`, `main.tex`, etc., when feasible; if binary attachments block tooling in this environment, keep a lightweight metadata stub (e.g., `source.txt` with links) instead. Keep derived annotations elsewhere (not inside the `literature/` subtree).
+- Summaries live alongside downloads at `PROJECT/docs/literature/<slug>.summary.md` and should capture bibliographic data, main results, computational relevance, and implementation cues.
+- When the user asks to “download papers X, Y, Z,” create/refresh the corresponding `docs/literature/<slug>/` folders with the requested files and update or add summary notes so new collaborators can orient quickly.
